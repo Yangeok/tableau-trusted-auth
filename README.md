@@ -24,3 +24,7 @@ yarn restart # restart
 - Tableau Server responds with a ticket.
 - The back-end returns the ticket to the front-end.
 - Redeem the ticket and display the Tableau dashboard.
+
+## References
+- [Trusted Ticket Authentication With Tableau Server](https://www.zuar.com/blog/trusted-ticket-authentication-with-tableau-server/)
+- [Implementing Trusted Tickets for Tableau Server with NodeJS](https://www.zuar.com/blog/implementing-trusted-tickets-for-tableau-server-with-nodejs/)
