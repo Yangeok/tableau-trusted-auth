@@ -19,10 +19,14 @@
             body.append('username', username)
             body.append('share_link', sharedLink)
 
+
             fetch('http://localhost:8080/api', { method: 'POST', body })
-                .then(res => res.json())
+                .then(res => {
+                    console.log(res.json())
+                    
+                })
                 .then(body => {
-                    // document.getElementById('response').innerText = JSON.stringify(body) // TMP:
+                    document.getElementById('response').innerText = JSON.stringify(body) // TMP:
                     
                     if (body.ticket === '-1') return
                     
