@@ -6,12 +6,12 @@
   "author": "Yangwook Jeong <yangwookee@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "forever start index.js",
+    "start": "pm2 start index.js",
     "start:dev": "node index.js",
-    "restart": "forever restart index.js",
-    "stop": "forever stop index.js"
+    "restart": "pm2 restart index.js",
+    "stop": "pm2 stop index.js"
   },
   "devDependencies": {
-    "forever": "^4.0.1"
+    "pm2": "^5.1.0"
   }
 }
