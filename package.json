@@ -6,22 +6,41 @@
   "author": "Yangwook Jeong <yangwookee@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "pm2 start index.js",
+    "build": "tsc",
+    "start": "pm2 start ecosystem.yml",
     "start:dev": "nodemon src/index.ts",
-    "restart": "pm2 restart index.js",
-    "stop": "pm2 stop index.js"
+    "restart": "pm2 restart ecosystem.yml",
+    "stop": "pm2 stop ecosystem.yml",
+    "lint": "eslint --ignore-pattern './dist/*' --ignore-pattern '*.d.ts' --ext .ts .",
+    "lint:fix": "eslint --fix --ignore-pattern './dist/*' --ignore-pattern '*.d.ts' --ext .ts .",
+    "lint:staged": "lint-staged"
   },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --ext .ts ./src --fix",
+      "git add --force"
+    ],
+    "./src/**": [
+      "prettier --write .",
+      "git add --force"
+    ]
+  },
+  "pre-commit": "lint:staged",
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/body-parser": "^1.19.1",
     "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
     "@types/morgan": "^1.9.3",
     "@types/node": "^16.4.13",
+    "@typescript-eslint/parser": "^4.29.2",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "lint-staged": "^11.1.2",
     "nodemon": "^2.0.12",
     "pm2": "^5.1.0",
+    "pre-commit": "^1.2.2",
     "prettier": "^2.3.2",
     "ts-node": "^10.1.0",
     "tsc": "^2.0.3",
@@ -31,6 +50,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "cors": "^2.8.5",
+    "express": "^4.17.1",
     "fetch": "^1.1.0",
     "morgan": "^1.10.0"
   }
