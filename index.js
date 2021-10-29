@@ -9,7 +9,6 @@ function processApiResponse(res, tableauServer, username, site) {
     let url = new URL(tableauServer + '/trusted')
     let body = {
         username: username,
-        // client_ip: '172.16.100.11'
     }
     if (site) {
         body['target_site'] = site
