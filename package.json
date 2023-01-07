@@ -2,7 +2,7 @@
   "name": "trusted-auth",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@personal:zuarbase/trusted_auth_demo.git",
+  "repository": "https://github.com/Yangeok/tableau-trusted-auth.git",
   "author": "Yangwook Jeong <yangwookee@gmail.com>",
   "license": "MIT",
   "scripts": {
